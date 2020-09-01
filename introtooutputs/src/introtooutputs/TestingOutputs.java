@@ -2,21 +2,21 @@ package introtooutputs;
 
 public class TestingOutputs 
 {
-	static int StateMachineFlow = 0;
+	static int n = 0;
 	
 	public static void main(String[] args) 
 	{
-		System.out.println("								    Joseph Liang");
+		System.out.println("									Joseph Liang");
 		System.out.println("");
-		while(StateMachineFlow < 3) {
+		while(n < 3) {
 			System.out.println("Joseph Liang");
-			StateMachineFlow++;
+			n++;
 		}
 		System.out.println("");
 		System.out.println("********");
 		System.out.println("**java**");
 		System.out.println("********");
-
+		
 	}
 
 }
