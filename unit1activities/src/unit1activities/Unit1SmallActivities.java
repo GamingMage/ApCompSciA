@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Purpose: Take in, store, manipulate, and print values
  */
 
-public class Unit1Activities {
+public class Unit1SmallActivities {
 
 	public static void main(String[] args) {
 		Scanner userInput = new Scanner(System.in);
@@ -46,18 +46,16 @@ public class Unit1Activities {
 		decTwo = userInput.nextDouble();
 		decTwo %= 1;
 		decTwo *= 100;
-		hundredths = (int)decTwo;
-		//NOTE: this math does not like .34. It prints as 33
+		hundredths = (int)(Math.round(decTwo));
 		System.out.println("The first two digits after the decimal point are: " + hundredths + "\n");
 		
 		System.out.print("Please enter a temperature in degrees Fahrenheit: ");
 		userTempF = userInput.nextDouble();
-		convTempC = (userTempF - 32)*(5/9);
-		//NOTE: this math does not work! 10F outputs -0.0C
+		convTempC = (userTempF - 32)*(5.0/9);
 		System.out.println("That temperature in Celsius is " + convTempC + ".");
-		System.out.print("Please enter a temperature in degrees Celsius:");
+		System.out.print("Please enter a temperature in degrees Celsius: ");
 		userTempC = userInput.nextDouble();
-		convTempF = (userTempC * (9/5)) + 32;
+		convTempF = (userTempC * (9.0/5)) + 32;
 		System.out.println("That temperature in Fahrenheit is " + convTempF + ".\n");
 		
 		System.out.print("Please enter a 3 digit positive integer: ");
