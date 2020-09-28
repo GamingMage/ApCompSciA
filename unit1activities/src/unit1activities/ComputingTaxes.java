@@ -27,24 +27,24 @@ public class ComputingTaxes {
 		System.out.print("\nEnter the hourly rate: ");
 		rate = userInput.nextDouble();
 		
-		System.out.println("\n\nHours worked:\t\t" + hours);
-		System.out.printf("\nHourly rate:\t\t$%.2f",rate);
+		System.out.println("\n\nHours worked:\t\t\t" + hours);
+		System.out.printf("\nHourly rate:\t\t\t$%.2f",rate);
 		
-		//Note: Exception in thread "main" java.util.UnknownFormatConversionException: Conversion = ')'
 		gross = (double)hours * rate;
-		System.out.printf("\n\n\nGross pay:\t\t$%.2f",gross);
+		System.out.printf("\n\n\nGross pay:\t\t\t$%.2f",gross);
 		
+		//Note: Make sure to escape % symbols with either %% or \% when you want to print one
 		fed = gross * fedR;
-		System.out.printf("\n\nFederal tax (18%)\t\t$%.2f",fed);
+		System.out.printf("\n\nFederal tax (18%%)\t\t$%.2f",fed);
 		ss = gross * ssR;
-		System.out.printf("\n\nSocial security tax (8%)\t$%.2f",ss);
+		System.out.printf("\n\nSocial security tax (8%%)\t$%.2f",ss);
 		state = gross * stateR;
-		System.out.printf("\n\nState tax (3.2%)\t\t$%.2f",state);
+		System.out.printf("\n\nState tax (3.2%%)\t\t$%.2f",state);
 		local = gross * localR;
-		System.out.printf("\n\nLocal tax (2%)\t\t$%.2f",local);
+		System.out.printf("\n\nLocal tax (2%%)\t\t\t$%.2f",local);
 		
 		net = gross - (fed + ss + state + local);
-		System.out.printf("\n\n\nNet pay\t\t$%.2f",net);
+		System.out.printf("\n\n\nNet pay\t\t\t\t$%.2f",net);
 		
 		userInput.close();
 
