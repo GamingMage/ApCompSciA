@@ -22,6 +22,7 @@ public class ComputingTaxes {
 		double stateR = .032;
 		double localR = .02;
 		
+		//Enter hours worked and rate
 		System.out.print("Enter the number of hours worked this week: ");
 		hours = userInput.nextInt();
 		System.out.print("\nEnter the hourly rate: ");
@@ -33,6 +34,7 @@ public class ComputingTaxes {
 		gross = (double)hours * rate;
 		System.out.printf("\n\n\nGross pay:\t\t\t$%.2f",gross);
 		
+		//Calculate tax deductions and print
 		//Note: Make sure to escape % symbols with either %% or \% when you want to print one
 		fed = gross * fedR;
 		System.out.printf("\n\nFederal tax (18%%)\t\t$%.2f",fed);
@@ -43,6 +45,7 @@ public class ComputingTaxes {
 		local = gross * localR;
 		System.out.printf("\n\nLocal tax (2%%)\t\t\t$%.2f",local);
 		
+		//Print net earnings
 		net = gross - (fed + ss + state + local);
 		System.out.printf("\n\n\nNet pay\t\t\t\t$%.2f",net);
 		
