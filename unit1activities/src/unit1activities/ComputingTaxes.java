@@ -17,10 +17,10 @@ public class ComputingTaxes {
 		double rate;
 		double gross, net;
 		double fed, ss, state, local;
-		double fedR = .18;
-		double ssR = .08;
-		double stateR = .032;
-		double localR = .02;
+		final double fedR = .18;
+		final double ssR = .08;
+		final double stateR = .032;
+		final double localR = .02;
 		
 		//Enter hours worked and rate
 		System.out.print("Enter the number of hours worked this week: ");
