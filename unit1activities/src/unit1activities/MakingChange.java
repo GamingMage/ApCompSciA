@@ -44,7 +44,7 @@ public class MakingChange {
 		
 		//Version with modulus
 		dollars = (int)(change);
-		System.out.println("\nDollars:\t" + dollars);
+		System.out.println("\n\nDollars:\t" + dollars);
 		cents = (change - dollars);
 		quarters = (int)(100*(cents - (cents % .25))/25);
 		System.out.println("\nQuarters:\t" + quarters);
