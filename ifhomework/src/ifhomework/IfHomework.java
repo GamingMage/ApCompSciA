@@ -32,6 +32,8 @@ public class IfHomework {
 			System.out.print("\nYour numbers are equal!\n\n" + x + " and " + y + " are the same.");
 		}
 
+		userInput.close();
+		
 	}
 
 }
