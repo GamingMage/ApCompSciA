@@ -58,22 +58,22 @@ public class Unit2SmallActivities {
 		System.out.println(testInt + " is " + evenOdd + " and " + posNegZero + ".");
 		
 		//Activity 4: Ask the user to guess a secret constant on [0,20]
-		System.out.print("\n\nPick a number between 1 and 20: ");
+		System.out.print("\n\nPick an integer between 1 and 20: ");
 		guess = userInput.nextInt();
 		if (guess >= 1 && guess <= 20) {
 			if (guess == SECRET) {
 				System.out.println("Congratulations! You guessed my number!");
 			} else if (Math.abs(SECRET - guess) <= 2) {
-				System.out.print("So close! Try again!");
+				System.out.println("So close! Try again!");
 			} else {
-				System.out.print("Wow... That's not even close.");
+				System.out.println("Wow... That's not even close.");
 			}
 		} else {
 			System.out.println("What are you doing?! That value is not even in the range I asked for!");
 		}
 		
 		//Activity 5: Take inputs for a quadratic and output the solutions. Be able to deal with a negative (b^2 - 4ac) term
-		System.out.print("Please input the the coefficients of your quadractic in the form of ax^2 + bx + c\na = ");
+		System.out.print("\n\nPlease input the the coefficients of your quadractic in the form of ax^2 + bx + c\na = ");
 		a = userInput.nextDouble();
 		System.out.print("b = ");
 		b = userInput.nextDouble();
