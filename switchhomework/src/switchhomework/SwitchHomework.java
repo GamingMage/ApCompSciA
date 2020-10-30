@@ -14,7 +14,6 @@ public class SwitchHomework {
 		
 		Scanner userInput = new Scanner(System.in);
 		int switchCase = 0;
-		boolean validChoice = false;
 		
 		System.out.println("Welcome to my Animal Sounds Menu!\n");
 		System.out.print("Please choose which animal’s sound you would like to\nhear ... well, read really." + 
@@ -51,7 +50,8 @@ public class SwitchHomework {
 				System.out.print("\nNot a valid selection.");
 				break;
 		}
-
+		
+		userInput.close();
 	}
 
 }

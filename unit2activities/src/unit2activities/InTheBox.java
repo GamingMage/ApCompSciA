@@ -35,7 +35,9 @@ public class InTheBox {
 		} else {
 			System.out.print("The point (" + x + "," + y + ") is not inside the box.");
 		}
-
+		
+		userInput.close();
+		
 	}
 
 }

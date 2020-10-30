@@ -55,6 +55,8 @@ public class ServiceStation {
 		System.out.printf("\n\nTotal due:\t\t\t$%.2f", total);
 		System.out.print("\n\n\nTHANK YOU FOR COMING!");
 
+		userInput.close();
+		
 	}
 
 }
