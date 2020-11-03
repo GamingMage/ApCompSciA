@@ -6,7 +6,6 @@ import java.util.Scanner;
  * Name: Joseph Liang
  * Date: 10/30/20
  * Purpose: Take inputs of completions, attempts, passing yards, touchdowns, and interceptions, and calculate NFL passer rating
- * Source for formula: https://medium.com/@gzil/how-to-calculate-nfl-passer-rating-using-a-formula-in-excel-or-google-sheets-54eb07246d1e
  */
 
 public class PasserRating {
@@ -34,6 +33,23 @@ public class PasserRating {
 		r4 = 2.375 - ((interceptions/attempts)*25);
 		rFinal = ((r1 + r2 + r3 + r4)/6)*100;
 		
+		if (r1 > 2.375) {
+			r1 = 2.375;
+		}
+		if (r2 > 2.375) {
+			r2 = 2.375;
+		}
+		if (r3 > 2.375) {
+			r3 = 2.375;
+		}
+		
+		rFinal = ((r1 + r2 + r3 + r4)/6)*100;
+		
+		if (rFinal < 0) {
+			rFinal = 0;
+		}
+		
+		//Scale from 0 to 158.3
 		System.out.printf("\nThe NFL Passer Rating for your player is: %.1f.", rFinal);
 		
 		userInput.close();
