@@ -31,23 +31,29 @@ public class PasserRating {
 		r2 = ((passingYards/attempts) - 3)*.25;
 		r3 = (touchdowns/attempts)*20;
 		r4 = 2.375 - ((interceptions/attempts)*25);
-		rFinal = ((r1 + r2 + r3 + r4)/6)*100;
 		
 		if (r1 > 2.375) {
 			r1 = 2.375;
+		}else if (r1 < 0) {
+			r1 = 0;
 		}
 		if (r2 > 2.375) {
 			r2 = 2.375;
+		}else if (r2 < 0) {
+			r2 = 0;
 		}
 		if (r3 > 2.375) {
 			r3 = 2.375;
+		}else if (r3 < 0) {
+			r3 = 0;
+		}
+		if (r4 > 2.375) {
+			r4 = 2.375;
+		}else if (r4 < 0) {
+			r4 = 0;
 		}
 		
 		rFinal = ((r1 + r2 + r3 + r4)/6)*100;
-		
-		if (rFinal < 0) {
-			rFinal = 0;
-		}
 		
 		//Scale from 0 to 158.3
 		System.out.printf("\nThe NFL Passer Rating for your player is: %.1f.", rFinal);

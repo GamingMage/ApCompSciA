@@ -20,6 +20,7 @@ public class ServiceStation {
 		final double r = 3.599, s = 3.699, p = 3.799, n = 0;
 		double total;
 		
+		//Prompt the user for gas type, gallons of gas, and ask if they got a car wash
 		System.out.print("Enter gas type (R, S, P, or N): ");
 		fuelType = userInput.nextLine();
 		System.out.print("\nEnter number of gallons: ");
@@ -28,6 +29,7 @@ public class ServiceStation {
 		userInput.nextLine();
 		carWash = userInput.nextLine();
 		
+		//Output number of gallons and price of gas purchased
 		System.out.printf("\n\nAmount of gasoline purchased:\t%.2f gallons", gallons);
 		if (fuelType.equals("R")) {
 			System.out.println("\n\nPrice per gallon:\t\t$" + r);
@@ -42,6 +44,7 @@ public class ServiceStation {
 			System.out.println("\n\nPrice per gallon:\t\t$" + n);
 			perGal = n;
 		}
+		//Determine their total cost
 		if (carWash.equals("Y") && (gallons * perGal) >= 10) {
 			washCost = 3;
 		} else if (carWash.equals("Y") && (gallons * perGal) < 10) {
@@ -49,6 +52,7 @@ public class ServiceStation {
 		} else {
 			washCost = 0;
 		}
+		//Output cost of individual expenses and the total cost
 		System.out.printf("\nTotal gasoline cost:\t\t$%.2f", (gallons * perGal));
 		System.out.printf("\n\nCar wash cost:\t\t\t$%.2f", washCost);
 		total = (gallons * perGal) + washCost;
