@@ -27,10 +27,10 @@ public class WhileHomework {
 			System.out.println("");
 		}
 		scoreMean = scoreSum/scoresEntered;
-		System.out.println("The mean of the test scores is: " + scoreMean);
+		System.out.printf("The mean of the test scores is: %.1f", scoreMean);
 		
 		//Take 2 ints and print the even values between them including the given values if applicable
-		System.out.print("\n\nPlease enter two integers: ");
+		System.out.print("\n\n\nPlease enter two integers: ");
 		x = userInput.nextInt();
 		y = userInput.nextInt();
 		System.out.println("");
@@ -49,6 +49,8 @@ public class WhileHomework {
 			System.out.print(x + " ");
 			x += 2;
 		}
+		
+		userInput.close();
 		
 	}
 
