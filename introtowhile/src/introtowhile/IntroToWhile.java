@@ -25,6 +25,8 @@ public class IntroToWhile {
 		}
 		System.out.println("\nYou entered " + numbersEntered + " positive numbers.");
 		System.out.print("The sum of the positive numbers you entered is " + sum + ".");
+		
+		userInput.close();
 
 	}
 
