@@ -19,6 +19,9 @@ public class ActivitiesMenu {
 		int primeCheck;
 		int startTemp, endTemp;
 		double celsius;
+		int sumValue, sumAddition;
+		int termNumber;
+		double termDouble, approx;
 		
 		System.out.println("Welcome!");
 		while (switchFlow != 7) {
@@ -104,10 +107,37 @@ public class ActivitiesMenu {
 					System.out.println("");
 					break;
 				case 5:
+					/*Take user input of an integer. Compute how many consecutive integers
+					starting with 1 it takes to add to a value greater than the value entered.
+					Output both the number of integers and the sum obtained. You may assume
+					that the user enters a positive number.*/
+					System.out.print("\nActivity 5:\nPlease enter the number you would like the sum to exceed: ");
+					x = userInput.nextInt();
+					sumValue = 0;
+					sumAddition = 0;
 					
+					while (sumValue <= x) {
+						sumAddition++;
+						sumValue += sumAddition;
+					}
+					System.out.println("\nYou must add the " + sumAddition + " numbers between 1 and " + sumAddition + " to get " + 
+							sumValue + " and exceed " + x + ".\n");
 					break;
 				case 6:
+					/*The German mathematician Leibniz approximated pi/4 with an infinite sum.
+					His formula was: pi/4 = 1 - 1/3 + 1/5 - 1/7...
+					Take user input for the number of terms to use in the approximation. Output the result.*/
+					System.out.println("\nActivity Challenge:\nHow many terms should be used to approximate pi/4?");
+					x = userInput.nextInt();
+					termNumber = -1;
+					approx = 0;
 					
+					while (termNumber < x - 1) {
+						termNumber++;
+						termDouble = termNumber;
+						approx += ((Math.pow(-1, termDouble))/(2*termDouble + 1));
+					}
+					System.out.println("Leibniz's approximation with " + x + " terms yields " + approx + "\n");
 					break;
 				case 7:
 					//exit case
