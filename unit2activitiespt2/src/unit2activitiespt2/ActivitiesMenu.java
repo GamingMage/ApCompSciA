@@ -99,11 +99,20 @@ public class ActivitiesMenu {
 					endTemp = userInput.nextInt();
 					
 					System.out.println("Fahrenheit\tCelsius");
-					while (startTemp <= endTemp) {
-						celsius = ((startTemp - 32) * (5.0/9));
-						System.out.printf("%d\t\t%.2f\n", startTemp, celsius);
-						startTemp++;
+					if (startTemp <= endTemp) {
+						while (startTemp <= endTemp) {
+							celsius = ((startTemp - 32) * (5.0/9));
+							System.out.printf("%d\t\t%.2f\n", startTemp, celsius);
+							startTemp++;
+						}
+					} else {
+						while (startTemp >= endTemp) {
+							celsius = ((startTemp - 32) * (5.0/9));
+							System.out.printf("%d\t\t%.2f\n", startTemp, celsius);
+							startTemp--;
+						}
 					}
+					
 					System.out.println("");
 					break;
 				case 5:
