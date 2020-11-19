@@ -43,6 +43,9 @@ public class ActivitiesMenu {
 							x--;
 							factorial *= x;
 						}
+						if (factorial == 0) {
+							factorial += 1;
+						}
 						System.out.println(y + "! = " + factorial + "\n");
 					} else {
 						System.out.println("ERROR: INVALD INPUT\n");
@@ -58,10 +61,14 @@ public class ActivitiesMenu {
 						primeCheck = 1;
 						y = x;
 						
-						while (x != 0) {
+						if (primeCheck != y) {
+							while (x != 0) {
+								primeCheck++;
+								x = y;
+								x %= primeCheck;
+							}
+						} else {
 							primeCheck++;
-							x = y;
-							x %= primeCheck;
 						}
 						
 						if (primeCheck == y) {
