@@ -14,8 +14,13 @@ public class ActivitiesMenu2 {
 		
 		Scanner userInput = new Scanner(System.in);
 		int switchFlow = 0;
-		int x, y, z;
+		int x, y;
 		int sum = 0;
+		int large = 0;
+		int small = 0;
+		final int height = 3;
+		final int length = 8;
+		final int base = 8;
 		
 		System.out.println("Welcome!");
 		while (switchFlow != 7) {
@@ -50,25 +55,72 @@ public class ActivitiesMenu2 {
 					the values entered.*/
 					System.out.println("\nActivity 3:\nHow many numbers will be entered?");
 					x = userInput.nextInt();
+					System.out.println("");
 					for (int i = 1; i <= x; i++) {
 						System.out.print("Please enter number " + i + ": ");
 						y = userInput.nextInt();
-						z = 0;
-						sum += y;
-						if (x != 1) {
-							if (y > z)
-							z = y;
+						if (i == 1) {
+							sum = y;
+							large = y;
+							small = y;
+						} else {
+							if (y > large) {
+								large = y;
+							} else if (y < small) {
+								small = y;
+							}
+							sum += y;
 						}
+						
 					}
+					System.out.println("\nThe largest number was " + large + ".\n"
+							+ "The smallest number was " + small + ".\n"
+							+ "The sum of the numbers was " + sum + ".\n");
 					break;
 				case 4:
-					/**/
+					/*Use nested for loops to print a box made of X’s with a length of 8 and a
+					height of 3. Store 8 and 3 as constants.*/
+					System.out.println("\nActivity 4:\n");
+					for (int i = 1; i <= height; i++) {
+						for (int j = 1; j <= length; j++) {
+							System.out.print("X");
+						}
+						System.out.println("");
+					}
+					System.out.println("");
 					break;
 				case 5:
-					/**/
+					/*Use nested for loops to print a right triangle made of X’s with a height of 8
+					and a base of 8. Store 8 as a constant.*/
+					System.out.println("\nActivity 5:\n");
+					for (int i = 1; i <= base; i++) {
+						for (int j = 1; j <= i; j++) {
+							System.out.print("X");
+						}
+						System.out.println("");
+					}
+					System.out.println("");
 					break;
 				case 6:
-					/**/
+					/*Use nested for loops to create a multiplication table that goes up to 5.*/
+					System.out.println("\nActivity 6:\n");
+					for (int i = 0; i <= 5; i++) {
+						if (i == 0) {
+							System.out.print(" \t");
+						}
+						for (int j = 1; j <= 5; j++) {
+							if (j == 1 && i != 0) {
+								System.out.print(i + "\t");
+							}
+							if (i == 0) {
+								System.out.print(j + "\t");
+							} else {
+								System.out.print(j*i + "\t");
+							}
+						}
+						System.out.println("");
+					}
+					System.out.println("");
 					break;
 				case 7:
 					//exit case
