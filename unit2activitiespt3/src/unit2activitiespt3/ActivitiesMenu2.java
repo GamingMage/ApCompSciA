@@ -44,6 +44,7 @@ public class ActivitiesMenu2 {
 					x = userInput.nextInt();
 					System.out.print("Please enter the ending number: ");
 					y = userInput.nextInt();
+					sum = 0;
 					for (int i = x; i <= y; i++) {
 						sum += i;
 					}
