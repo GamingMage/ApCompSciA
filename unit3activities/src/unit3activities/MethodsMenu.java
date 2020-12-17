@@ -89,6 +89,26 @@ public class MethodsMenu {
 		sec -= mins*60;
 		System.out.println("Hours: " + hours + "\nMinutes: " + mins + "\nSeconds: " + sec);
 	}
+	/**
+	 * Take an integer and approximate the square root using an iterative method
+	 * @param n
+	 */
+	public static void sqrtApprox(int n) {
+		double x = 500;
+		double y;
+		int count = 0;
+		boolean closeEnough = false;
+		while (!closeEnough) {
+			y = .5 * (x + (n/x));
+			count++;
+			System.out.println("Approximation " + count + " of the square root of " + n + " is " + y);
+			if ((int)(y*1000000) == (int)(x*1000000)) {
+				closeEnough = true;
+				System.out.printf("The square root of " + n + " is approximately %.3f", y);
+			}
+			x = y;
+		}
+	}
 	
 	public static void main(String[] args) {
 		
@@ -135,7 +155,9 @@ public class MethodsMenu {
 					System.out.println("");
 					break;
 				case 7:
-					
+					System.out.print("\nActivity 7:\nPlease input a positive integer: ");
+					sqrtApprox(userInput.nextInt());
+					System.out.println("\n");
 					break;
 				case 8:
 					//exit case
