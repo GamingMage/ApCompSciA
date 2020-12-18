@@ -6,7 +6,7 @@ import java.lang.Math;
 /*
  * Name: Joseph Liang
  * Date: 12/15/20
- * Purpose: Take a manu input and run the indicated activity method
+ * Purpose: Take a menu input and run the indicated activity method
  */
 
 public class MethodsMenu {
