@@ -12,7 +12,8 @@ public class recurPairs {
 	
 	public static int factorialIter(int x) {
 		int n = 1;
-		for(int i = 0; i < x; i++) {
+		int y = x;
+		for(int i = 0; i < y; i++) {
 			n *= x;
 			x--;
 		}
@@ -35,7 +36,7 @@ public class recurPairs {
 		}else if(x == 1) {
 			return 1;
 		}
-		for(int i = 0; i < x; i++) {
+		for(int i = 1; i < x; i++) {
 			c = a + b;
 			a = b;
 			b = c;
