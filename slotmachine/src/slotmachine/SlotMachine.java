@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class SlotMachine {
 
 	public static int spin() {
-		return (int)Math.random()*9 + 1;
+		return (int)(Math.random()*9 + 1);
 	}
 	public static boolean three(int a, int b, int c) {
 		if(a == b && b == c) {
@@ -99,15 +99,22 @@ public class SlotMachine {
 		Scanner userInput = new Scanner(System.in);
 		
 		boolean play = true;
-		System.out.print("Would you like to play the Slot Machine?\nIt costs $.25 to play.\nEnter 1 for yes and 0 for no: ");
-		int a = userInput.nextInt();
-		if (a == 1) {
-			play = true;
-		}else if (a == 0){
-			play = false;
-		}else {
-			 
+		boolean valid = false;
+		
+		while (!valid) {
+			System.out.print("Would you like to play the Slot Machine?\nIt costs $.25 to play.\nEnter 1 for yes and 0 for no: ");
+			int a = userInput.nextInt();
+			if (a == 1) {
+				play = true;
+				valid = true;
+			}else if (a == 0){
+				play = false;
+				valid = true;
+			}else {
+				System.out.println("\nPlease enter either 0 or 1.");
+			}
 		}
+		
 		double x = 0;
 		double y;
 		while (play) {
@@ -125,18 +132,32 @@ public class SlotMachine {
 			}else if (x == 0) {
 				System.out.println("At the moment, you have broken even!");
 			}else {
-				System.out.print("So far you have won: $" + x + "!");
+				System.out.println("So far you have won: $" + x + "!");
 			}
-			System.out.print("Would you like to play the Slot Machine again?\nEnter 1 for yes and 0 for no: ");
-			a = userInput.nextInt();
-			if (a == 1) {
-				play = true;
-			}else if (a == 0){
-				play = false;
-			}else {
-				
+			valid = false;
+			while (!valid) {
+				System.out.print("Would you like to play the Slot Machine again?\nEnter 1 for yes and 0 for no: ");
+				int a = userInput.nextInt();
+				if (a == 1) {
+					play = true;
+					valid = true;
+				}else if (a == 0){
+					play = false;
+					valid = true;
+				}else {
+					System.out.println("\nPlease enter either 0 or 1.");
+				}
 			}
 		}
+		System.out.println("\nThank you for playing!");
+		if (x < 0) {
+			System.out.println("You lost: $" + Math.abs(x) + ".");
+		}else if (x == 0) {
+			System.out.println("You broke even!");
+		}else {
+			System.out.println("You won: $" + x + "!");
+		}
+		userInput.close();
 
 	}
 
