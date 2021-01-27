@@ -8,23 +8,32 @@ package unit4circle;
 
 public class CircleRunner {
 
-	public static double compareRadii(double x, double y) {
+	public static void compareRadii(Circle circ1, Circle circ2) {
+		double x = circ1.getRadius();
+		double y = circ2.getRadius();
 		if (x > y) {
-			return x;
+			System.out.println("The larger radius of the two circles is: " + x);
+			return;
 		}
-		return y;
+		System.out.println("The larger radius of the two circles is: " + y);
 	}
-	public static double compareAreas(double x, double y) {
+	public static void compareAreas(Circle circ1, Circle circ2) {
+		double x = circ1.getArea();
+		double y = circ2.getArea();
 		if (x > y) {
-			return x;
+			System.out.printf("The larger area of the two circles is: %.2f\n", x);
+			return;
 		}
-		return y;
+		System.out.printf("The larger area of the two circles is: %.2f\n", y);
 	}
-	public static double compareCircumferences(double x, double y) {
+	public static void compareCircumferences(Circle circ1, Circle circ2) {
+		double x = circ1.getCircumference();
+		double y = circ2.getCircumference();
 		if (x > y) {
-			return x;
+			System.out.printf("The larger circumference of the two circles is: %.2f\n", x);
+			return;
 		}
-		return y;
+		System.out.printf("The larger circumference of the two circles is: %.2f\n", y);
 	}
 	
 	public static void main(String[] args) {
@@ -35,16 +44,16 @@ public class CircleRunner {
 		System.out.println(circ1);
 		System.out.println(circ2);
 		
-		System.out.println("The larger radius of the two circles is: " + compareRadii(circ1.getRadius(), circ2.getRadius()));
-		System.out.printf("The larger area of the two circles is: %.2f\n", compareAreas(circ1.getArea(), circ2.getArea()));
-		System.out.printf("The larger circumference of the two circles is: %.2f\n", compareCircumferences(circ1.getCircumference(), circ2.getCircumference()));
+		compareRadii(circ1, circ2);
+		compareAreas(circ1, circ2);
+		compareCircumferences(circ1, circ2);
 		
 		circ2.setRadius(10);
 		System.out.println(circ2);
 		
-		System.out.println("The larger radius of the two circles is: " + compareRadii(circ1.getRadius(), circ2.getRadius()));
-		System.out.printf("The larger area of the two circles is: %.2f\n", compareAreas(circ1.getArea(), circ2.getArea()));
-		System.out.printf("The larger circumference of the two circles is: %.2f\n", compareCircumferences(circ1.getCircumference(), circ2.getCircumference()));
+		compareRadii(circ1, circ2);
+		compareAreas(circ1, circ2);
+		compareCircumferences(circ1, circ2);
 		
 		System.out.println(circ3);
 		

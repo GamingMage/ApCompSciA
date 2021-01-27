@@ -8,23 +8,32 @@ package unit4rectangle;
 
 public class RectangleRunner {
 
-	public static double compareLengths(double x, double y) {
+	public static void compareLengths(Rectangle rect1, Rectangle rect2) {
+		double x = rect1.getLength(); 
+		double y = rect2.getLength();
 		if (x > y) {
-			return x;
+			System.out.println("The larger length of the two rectangles is: " + x);
+			return;
 		}
-		return y;
+		System.out.println("The larger length of the two rectangles is: " + y);
 	}
-	public static double compareAreas(double x, double y) {
+	public static void compareAreas(Rectangle rect1, Rectangle rect2) {
+		double x = rect1.getArea(); 
+		double y = rect2.getArea();
 		if (x > y) {
-			return x;
+			System.out.println("The larger area of the two rectangles is: " + x);
+			return;
 		}
-		return y;
+		System.out.println("The larger area of the two rectangles is: " + y);
 	}
-	public static double comparePerimeters(double x, double y) {
+	public static void comparePerimeters(Rectangle rect1, Rectangle rect2) {
+		double x = rect1.getPerimeter(); 
+		double y = rect2.getPerimeter();
 		if (x > y) {
-			return x;
+			System.out.println("The larger perimeter of the two rectangles is: " + x);
+			return;
 		}
-		return y;
+		System.out.println("The larger perimeter of the two rectangles is: " + y);
 	}
 	
 	public static void main(String[] args) {
@@ -35,17 +44,17 @@ public class RectangleRunner {
 		System.out.println(rect1);
 		System.out.println(rect2);
 		
-		System.out.println("The larger length of the two rectangles is: " + compareLengths(rect1.getLength(), rect2.getLength()));
-		System.out.println("The larger area of the two rectangles is: " + compareAreas(rect1.getArea(), rect2.getArea()));
-		System.out.println("The larger perimeter of the two rectangles is: " + comparePerimeters(rect1.getPerimeter(), rect2.getPerimeter()));
+		compareLengths(rect1, rect2);
+		compareAreas(rect1, rect2);
+		comparePerimeters(rect1, rect2);
 		
 		rect2.setLength(1);
 		rect2.setWidth(.5);
 		System.out.println(rect2);
 		
-		System.out.println("The larger length of the two rectangles is: " + compareLengths(rect1.getLength(), rect2.getLength()));
-		System.out.println("The larger area of the two rectangles is: " + compareAreas(rect1.getArea(), rect2.getArea()));
-		System.out.println("The larger perimeter of the two rectangles is: " + comparePerimeters(rect1.getPerimeter(), rect2.getPerimeter()));
+		compareLengths(rect1, rect2);
+		compareAreas(rect1, rect2);
+		comparePerimeters(rect1, rect2);
 		
 		System.out.println(rect3);
 
