@@ -13,14 +13,6 @@ public class AnagramRunner {
 		String first = "Tom Marvolo Riddle";
 		String second = "I am Lord Voldemort";
 		
-//		first = first.substring(first.indexOf('o') + 1);
-//		System.out.println(first);
-//		first = first.substring(first.indexOf('o') + 1);
-//		System.out.println(first);
-//		first = first.substring(first.indexOf('o') + 1);
-//		System.out.println(first);
-//		first = first.substring(first.indexOf('o') + 1);
-//		System.out.println(first.indexOf('o') != -1);
 		
 		if (Anagram.testAnagram(first, second)) {
 			System.out.println("Anagrams!");

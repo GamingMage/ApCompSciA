@@ -8,37 +8,21 @@ package unit5activitiespt1;
 
 public class Anagram {
 
-	private static boolean testChar(String str1, String str2, char char1) {
-		int charCount1 = 0;
-		int charCount2 = 0;
-		
-		while (str1.length() > 1 && str2.length() > 1 && str1.indexOf(char1) != -1 && str2.indexOf(char1) != -1) {
-			if (str1.indexOf(char1) != -1) {
-				charCount1++;
-				str1 = str1.substring(str1.indexOf(char1) + 1);
-			}
-			if (str2.indexOf(char1) != -1) {
-				charCount1++;
-				str2 = str2.substring(str2.indexOf(char1) + 1);
-			}
+	private static String noSpaces(String s) {
+		String hold = "";
+		while (s.indexOf(" ") != -1) {
+			hold = s.substring(0, s.indexOf(" "));
+			s = s.substring(s.indexOf(" ") + 1);
+			s = hold + s;
 		}
-//		for (int i = 0; i < str1.length(); i++) {
-//			if (str1.indexOf(char1) != -1) {
-//				charCount1++;
-//				str1 = str1.substring(str1.indexOf(char1) + 1);
-//			}
-//			if (str2.indexOf(char1) != -1) {
-//				charCount1++;
-//				str2 = str2.substring(str2.indexOf(char1) + 1);
-//			}
-//		}
-		
-		return charCount1 == charCount2;
+		return s;
 	}
 	
 	public static boolean testAnagram(String str1, String str2) {
-		str1 = str1.replace(" ", "");
-		str2 = str2.replace(" ", "");
+		str1 = noSpaces(str1);
+		//str1 = str1.replace(" ", "");
+		str2 = noSpaces(str2);
+		//str2 = str2.replace(" ", "");
 		str1 = str1.toLowerCase();
 		str2 = str2.toLowerCase();
 		
@@ -49,13 +33,21 @@ public class Anagram {
 			return false;
 		}
 		
-		for (char x = 'a'; x <= 'z'; x++) {
-			if (!testChar(str1, str2, x)) {
-				return false;
+		int count = 0;
+		for (int i = 0; i < str2.length(); i++) {
+			int oneCharChange = 0;
+			char x = str1.charAt(i);
+			for (int k = 0; k < str2.length(); k++) {
+				if (str2.charAt(k) == x) {
+					oneCharChange++;
+				}
+			}
+			if (oneCharChange >= 1) {
+				count++;
 			}
 		}
 		
-		return true;
+		return str2.length() == count;
 	}
 	
 }
