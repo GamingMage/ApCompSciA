@@ -88,9 +88,12 @@ public class Unit5Pt2Small {
 					
 					int[] dice = {d4.getValue(), d6.getValue(), d8.getValue(), d10.getValue(), d12.getValue()};
 					
-					System.out.println("The dice rolled: " + dice[0] + " " + dice[1] + " " + dice[2] + " " + dice[3] + " " + dice[4]);
+					System.out.print("The dice rolled: ");
+					for (int roll: dice) {
+						System.out.print(roll + " ");
+					}
 					
-					System.out.println("");
+					System.out.println("\n");
 					break;
 				case 4:
 					/*
@@ -106,14 +109,18 @@ public class Unit5Pt2Small {
 					}
 					int min = array2[0];
 					int max = array2[0];
+					int sum = array2[0];
 					for (int i = 1; i < array2.length; i++) {
 						if (array2[i] > max) {
 							max = array2[i];
 						} else if (array2[i] < min) {
 							min = array2[i];
 						}
+						sum += array2[i];
 					}
-					
+					System.out.println("Maximum: " + max);
+					System.out.println("Minimum:" + min);
+					System.out.println("Mean: " + sum/5.0);
 					
 					System.out.println("");
 					break;
