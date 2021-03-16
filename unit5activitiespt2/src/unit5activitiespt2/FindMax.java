@@ -28,7 +28,7 @@ public class FindMax {
 			arr[i] = userInput.nextInt();
 		}
 		
-		//Find largest
+		//Find largest value
 		int a = arr[0];
 		int b = 0;
 		for (int i = 1; i < arr.length; i++) {
@@ -43,7 +43,7 @@ public class FindMax {
 			}
 		}
 		
-		//Find second largest
+		//Find second largest value
 		int index = 0;
 		do {
 			if (index < arr.length) {
@@ -69,7 +69,7 @@ public class FindMax {
 			}
 		}
 		
-		//Find third largest
+		//Find third largest value
 		index = 0;
 		do {
 			if (index < arr.length) {

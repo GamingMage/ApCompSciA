@@ -42,7 +42,7 @@ public class Unit5Pt2Small {
 					 */
 					userInput.nextLine();
 					System.out.print("\nActivity 1:\nPlease enter a character: ");
-					char character = userInput.nextLine().charAt(0);
+					char character = userInput.nextLine().toLowerCase().charAt(0);
 					for (int i = 0; i < vowels.length; i++) {
 						if (vowels[i] == character) {
 							System.out.println(character + " is a vowel!");
