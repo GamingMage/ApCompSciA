@@ -44,19 +44,37 @@ public class StatsProject {
 		if (y == x) {
 			return x;
 		}else {
-			return (y + x)/2;
+			return (y + x)/2.0;
 		}
 	}
 	public static int findMode(int[] arr) {
 		int x = arr[0];
-		int count = 1;
 		for (int i = 1; i < arr.length; i++) {
-			if (x == arr[i]) {
-				count++;
-			}else {
+			if (x < arr[i]) {
 				x = arr[i];
 			}
 		}
+		return x;
+	}
+	public static int findNum(int[] arr, int x) {
+		int count = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (x == arr[i]) {
+				count++;
+			}
+		}
+		return count;
+	}
+	public static int[] findModes(int[] arr, int x, int mode) {
+		int[] modes = new int[x];
+		int count = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (mode == arr[i]) {
+				modes[count] = i-50;
+				count++;
+			}
+		}
+		return modes;
 	}
 	
 	public static void main(String[] args) {
@@ -77,36 +95,41 @@ public class StatsProject {
 				if ((i-50) < 0 && (i-50+1)%10 == 0) {
 					System.out.println();
 					number = false;
-					i -= 9;
+					i -= 10;
 				} else if ((i-50) > 0 && (i-50-9)%10 == 0 && (i-50) != 49) {
 					System.out.println();
 					number = false;
-					i -= 9;
+					i -= 10;
 				} else if ((i-50) == 50) {
 					System.out.println();
 					number = false;
-					i -= 10;
+					i -= 11;
 				}
 			} else {
-				if ((i-50-1)%10 == 0 && (i-50) != 50) {
+				if ((i-50)%10 == 0 && (i-50) != 50) {
 					System.out.print("Freq:\t");
 				}
 				System.out.print(freq[i] + "\t");
 				if ((i-50) < 0 && (i-50+1)%10 == 0) {
-					System.out.println();
+					System.out.println("\n");
 					number = true;
 				} else if ((i-50) > 0 && (i-50-9)%10 == 0 && (i-50) != 49) {
-					System.out.println();
+					System.out.println("\n");
 					number = true;
 				} else if ((i-50) == 50) {
-					System.out.println(freq[i]);
+					System.out.println("\n");
 				}
 			}
 			
 		}
 		System.out.println("The mean is: " + findMean(freq));
 		System.out.println("The median is: " + findMed(freq));
-
+		int[] modes = findModes(freq, findNum(freq, findMode(freq)), findMode(freq));
+		System.out.print("The mode is: ");
+		for (int i = 0; i < modes.length; i++) {
+			System.out.print(modes[i] + " ");
+		}
+		
 	}
 
 }
