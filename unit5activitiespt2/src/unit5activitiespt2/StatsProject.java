@@ -21,6 +21,43 @@ public class StatsProject {
 		}
 		return freq;
 	}
+	public static double findMean(int[] arr) {
+		double sum = 0;
+		for (int i = 0; i < arr.length; i++) {
+			sum += (i-50.0)*arr[i];
+		}
+		return sum/100;
+	}
+	public static double findMed(int[] arr) {
+		double upCount = 0;
+		double downCount = 0;
+		int x = 0;
+		int y = 0;
+		for (int i = 0; upCount < 50; i++) {
+			upCount += arr[i];
+			x = (i-50);
+		}
+		for (int i = arr.length - 1; downCount > 50; i--) {
+			downCount += arr[i];
+			y = (i-50);
+		}
+		if (y == x) {
+			return x;
+		}else {
+			return (y + x)/2;
+		}
+	}
+	public static int findMode(int[] arr) {
+		int x = arr[0];
+		int count = 1;
+		for (int i = 1; i < arr.length; i++) {
+			if (x == arr[i]) {
+				count++;
+			}else {
+				x = arr[i];
+			}
+		}
+	}
 	
 	public static void main(String[] args) {
 		int[] rand = new int[100];
@@ -67,6 +104,8 @@ public class StatsProject {
 			}
 			
 		}
+		System.out.println("The mean is: " + findMean(freq));
+		System.out.println("The median is: " + findMed(freq));
 
 	}
 
